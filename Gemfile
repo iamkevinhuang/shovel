@@ -6,7 +6,7 @@ gem 'rails', '3.1.9'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'haml', '~> 5.0'
 gem 'prototype-rails'
 # Gems used only for assets and not required
 # in production environments by default.
