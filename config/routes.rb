@@ -12,7 +12,7 @@ Shovell::Application.routes.draw do
   
   resources :stories do
     resources :votes,
-    :collection =>{:bin => :get}
+    :collection => {:bin => :get}
   end
 
   resource :session
