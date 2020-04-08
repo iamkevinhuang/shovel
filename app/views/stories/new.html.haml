@@ -1,0 +1,21 @@
+- if @story.errors.any?
+	#error_explanation
+		%h2 
+			#{pluralize(@story.errors.count, "error")} prohibited this story from being saved:
+		%ul
+			- @story.errors.full_messages.each do |msg|
+				%li
+					#{msg}
+
+
+= form_for @story do |f|
+	%p
+		name: 
+		%br/
+		= f.text_field :name
+	%p
+		link:
+		%br/
+		= f.text_field :link
+	%p
+		= submit_tag

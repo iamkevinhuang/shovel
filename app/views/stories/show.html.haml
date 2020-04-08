@@ -1,0 +1,21 @@
+%h2 
+	%span#vote_score
+		Score:  #{@story.votes.size}
+	#{@story.name}
+
+%ul#vote_history
+	-if @story.votes.empty?
+		%em No shoves yet!
+	-else
+		= render :partial => 'votes/vote', :collection => @story.votes.latest
+%p.submitted_by
+	Submitted by:
+	%span #{@story.user.login}
+
+%p 
+	#{link_to @story.link, @story_link}
+
+#vote_form
+	= form_tag story_votes_path(@story), :remote => true do
+		= submit_tag 'shove it'
+
