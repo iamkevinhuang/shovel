@@ -11,7 +11,8 @@ Shovell::Application.routes.draw do
   get "stories/index"
   
   resources :stories do
-    resources :votes
+    resources :votes,
+    :collection =>{:bin => :get}
   end
 
   resource :session
